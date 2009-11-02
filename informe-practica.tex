@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{url}
+\usepackage{palatino}
+
+\title{Internship report}
+\author{Roberto Bonvallet~\url{<rbonvall@gmail.com>}}
+\date{August 20th, 2008}
+
+\begin{document}
+  \maketitle
+
+  \section{Student information}
+  \begin{description}
+    \item[Name:] Roberto Bonvallet
+    \item[USM ID:] 2173014-9
+    \item[Email address:] \url{rbonvall@gmail.com}
+    \item[Phone:] no phone
+  \end{description}
+
+  \section{General description of the organization}
+    The European Organization for Nuclear Research, known as CERN, is the
+    world's largest particle physics laboratory, situated near Geneva,
+    on the border between France and Switzerland.  CERN's main function is to
+    provide the particle accelerators and other infrastructure needed for
+    high-energy physics research.
+
+    CERN operates a network of accelerators, of which the most important is the
+    Large Hadron Colider (LHC), which is being built.  This accelerator will
+    generate vast quantities of computer data, which CERN will stream to
+    laboratories around the world for distributed processing, by making use of
+    a specialized Grid computing infrastructure, the LCG.
+
+  \section{Section description}
+    I worked in the Grid Operations section of the Grid Deployment
+    group, within the Information Technology (IT) Department.
+
+    The IT Department is responsible of fulfilling CERN's needs for information
+    technology services for general-purpose, administrative, physics and
+    engineering computing, and the consolidation, coordination and
+    standardization of computing activities.
+
+    The Grid Deployment group is responsible for deploying, operating and
+    supporting the LCG service, and for coordinating the grid operations and
+    management activity within the Enabling Grids for E-sciencE project. 
+    The LCG ({\sc Lhc} Computing Grid) is the distributed computing and data
+    storage infrastructure supporting the LHC experiments.
+
+    The Grid Operations section is responsible for: operating grid-specific
+    services (information providers, resource brokers, authentication and
+    authorization services, etc.), and for building and operating a distributed
+    Grid Operations Centre, to perform performance monitoring, problem
+    identification, troubleshooting and general operational oversight.
+    providing 24$\times$7 global coverage.
+
+    The organization chart is attached as an appendix to this document.
+
+  \section{Main tasks accomplished}
+    The main tasks that were assigned to me were:
+    \begin{enumerate}
+        \item the design of a distributed dynamic system for the
+            synchronization of firewalls among Grid sites, and
+        \item the monitoring of the VOMS and VOMRS installations at the CERN
+            site.
+    \end{enumerate}
+
+    \subsection{Firewall system}
+    At the time of my arrival at the group, there was already an application
+    being used for the synchronization of firewalls, but it was meant to
+    work only in a local site, and not among sites.  This system was designed,
+    implemented and deployed on the CERN site by Romain Wartel%
+    \footnote{Romain Wartel: office~28~1-012, phone~74585, \url{Romain.Wartel@cern.ch}},
+    who wanted to improve it and assigned this project to me.
+
+    The main idea was to isolate all Grid components from the rest of the
+    Internet, by configuring their local firewalls to accept only connections
+    that come from hosts that belong to Grid sites, and to keep these
+    configurations updated dinamically.
+
+    The proposed solution is a three-component system that queries periodically
+    an already existent centralized database that contains site-specific data,
+    publishes it through HTTP to the local site, in order to allow clients on
+    its hosts to pull it and configure the local firewall.
+
+    The system is fully documented on
+    \url{https://twiki.cern.ch/twiki/bin/view/LCG/LCGFirewallSystem}.
+    
+    \subsection{VOMS monitoring}
+    The VOMS service handles the authentication and authorization of users when
+    using the Grid.  It is a critical service that must be working most of the
+    time.  However, the CERN instalation of VOMS and VOMRS (a related service)
+    used to fail often, sometimes due to a well-known bug in the application%
+    \footnote{\url{https://savannah.cern.ch/bugs/index.php?16843}}
+    (which could not be reproduced nor fixed at that time) but also for other
+    reasons.
+
+    With the direction of Maria Dimou%
+    \footnote{Maria Dimou: office 28 R-020, phone 73356, \url{Maria.Dimou@cern.ch}},
+    I worked on ways to monitor the servers in order to foresee when a failure
+    was going to happen and to recover and report when it actually happened.
+
+    Part of this task involved reviewing log files and correlating unusual
+    events with the failures that were recorded.
+
+    For the implementation of the monitoring tools, I decided to use Lemon%
+    \footnote{Lemon.  \url{http://cern.ch/lemon}},
+    a monitoring framework developed at CERN.  After learning about Lemon,
+    I was able to use existing sensors to monitor the service, and to develop my
+    own sensors for more VOMS-specific monitoring.  This experience was very
+    valuable, since there was no person with deep Lemon knowledge working in my
+    section at that time, and the deployed tools proved to be helpful.
+
+
+  \section{Technological platform}
+  \section{Personal contribution}
+  \section{Dates}
+    My intership lasted from July 15th, 2006, to January 15th, 2007.
+    
+
+    %During my stay at CERN, which lasted from July 15th, 2006 to January
+    %15th, 2007, I worked in the Grid Operations section of the Grid Deployment
+    %group, within the LCG project.  My supervisor was Ian Neilson%
+    %\footnote{Ian Neilson: office 28 R-020, phone 74929, \url{Ian.Neilson@cern.ch}}
+    %and my work was related to security in the Grid.
+
+\appendix
+  \section{Organization chart}
+
+
+\end{document}
+
