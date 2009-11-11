@@ -3,10 +3,11 @@
 \usepackage{fullpage}
 \usepackage{url}
 \usepackage{palatino}
+\usepackage{graphicx}
 
 \title{Internship report}
-\author{Roberto Bonvallet~\url{<rbonvall@gmail.com>}}
-\date{August 20th, 2008}
+\author{Roberto Bonvallet \\ \url{rbonvall@inf.utfsm.cl}}
+\date{November 2nd, 2009}
 
 \begin{document}
   \maketitle
@@ -15,7 +16,7 @@
   \begin{description}
     \item[Name:] Roberto Bonvallet
     \item[USM ID:] 2173014-9
-    \item[Email address:] \url{rbonvall@gmail.com}
+    \item[Email address:] \url{rbonvall@inf.utfsm.cl}
     \item[Phone:] no phone
   \end{description}
 
@@ -36,18 +37,18 @@
     I worked in the Grid Operations section of the Grid Deployment
     group, within the Information Technology (IT) Department.
 
-    The IT Department is responsible of fulfilling CERN's needs for information
+    The \emph{IT Department} is responsible of fulfilling CERN's needs for information
     technology services for general-purpose, administrative, physics and
     engineering computing, and the consolidation, coordination and
     standardization of computing activities.
 
-    The Grid Deployment group is responsible for deploying, operating and
+    The \emph{Grid Deployment group} is responsible for deploying, operating and
     supporting the LCG service, and for coordinating the grid operations and
     management activity within the Enabling Grids for E-sciencE project. 
-    The LCG ({\sc Lhc} Computing Grid) is the distributed computing and data
+    The LCG (LHC Computing Grid) is the distributed computing and data
     storage infrastructure supporting the LHC experiments.
 
-    The Grid Operations section is responsible for: operating grid-specific
+    The \emph{Grid Operations section} is responsible for: operating grid-specific
     services (information providers, resource brokers, authentication and
     authorization services, etc.), and for building and operating a distributed
     Grid Operations Centre, to perform performance monitoring, problem
@@ -70,7 +71,7 @@
     being used for the synchronization of firewalls, but it was meant to
     work only in a local site, and not among sites.  This system was designed,
     implemented and deployed on the CERN site by Romain Wartel%
-    \footnote{Romain Wartel: office~28~1-012, phone~74585, \url{Romain.Wartel@cern.ch}},
+    \footnote{Romain Wartel: office~28~R-016, phone~74585, \url{Romain.Wartel@cern.ch}},
     who wanted to improve it and assigned this project to me.
 
     The main idea was to isolate all Grid components from the rest of the
@@ -78,7 +79,7 @@
     that come from hosts that belong to Grid sites, and to keep these
     configurations updated dinamically.
 
-    The proposed solution is a three-component system that queries periodically
+    My proposed solution is a three-component system that queries periodically
     an already existent centralized database that contains site-specific data,
     publishes it through HTTP to the local site, in order to allow clients on
     its hosts to pull it and configure the local firewall.
@@ -109,13 +110,25 @@
     I was able to use existing sensors to monitor the service, and to develop my
     own sensors for more VOMS-specific monitoring.  This experience was very
     valuable, since there was no person with deep Lemon knowledge working in my
-    section at that time, and the deployed tools proved to be helpful.
+    section at that time, and the deployed sensors proved to be helpful.
 
 
   \section{Technological platform}
+    The technological platform on which my work was done was the LCG Grid
+    infrastructure, in particular with the Grid Security Infrastructure
+    component.
+
+    
+
+
+
+
   \section{Personal contribution}
+    
+
+
   \section{Dates}
-    My intership lasted from July 15th, 2006, to January 15th, 2007.
+    My internship lasted from July 15th, 2006, to January 15th, 2007.
     
 
     %During my stay at CERN, which lasted from July 15th, 2006 to January
@@ -124,9 +137,30 @@
     %\footnote{Ian Neilson: office 28 R-020, phone 74929, \url{Ian.Neilson@cern.ch}}
     %and my work was related to security in the Grid.
 
-\appendix
-  \section{Organization chart}
+\newpage
+  %\section*{Appendices}
+  \section*{Appendix: Organization chart}
+    The first chart shows the organization structure of the IT Department.
+    I worked in the Grid Deployment group, represented by the fourth box in the
+    bottom row.
 
+    \includegraphics[width=\textwidth]{ITorgJAN2008.pdf}
+
+    The second chart shows the structure within the Grid Deployment group.
+    I worked in the security group of the Grid Operations section.
+
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{it-gd.pdf}
+    \end{center}
 
 \end{document}
+
+% a. Datos del alumno (Nombre, rol utfsm, e-mail, teléfono).
+% b. Descripción general de la Empresa.
+% c. Descripción de la unidad donde trabajó (organigrama, cargos, lugar)
+% d. Las tareas principales realizadas.
+% e. Plataforma tecnológica utilizada.
+% f. Califique su aporte personal a la Organización.
+% g. Fechas en las que realizó la práctica.
+
 
